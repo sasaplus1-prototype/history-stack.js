@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "newLine": "lf",
+    "rootDir": ".",
+    "strict": true,
+    "target": "ES3"
+  },
+  "files": [
+    "index.ts",
+    "test.ts"
+  ]
+}
