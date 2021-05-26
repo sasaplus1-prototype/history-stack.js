@@ -2,5 +2,8 @@
   "devDependencies": {
     "typescript": "^4.2.4"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  }
 }
