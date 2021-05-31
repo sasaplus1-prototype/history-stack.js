@@ -3,6 +3,7 @@ exports.__esModule = true;
 var index_1 = require("./index");
 var hs = new index_1.HistoryStack();
 function log(h) {
+    // @ts-ignore
     console.log(h._stack, h._index, 'canUndo:' + h.canUndo(), 'canRedo:' + h.canRedo());
 }
 log(hs);

@@ -3,6 +3,7 @@ import { HistoryStack } from './index';
 const hs = new HistoryStack<string>();
 
 function log<T>(h: HistoryStack<T>) {
+  // @ts-ignore
   console.log(h._stack, h._index, 'canUndo:' + h.canUndo(), 'canRedo:' + h.canRedo());
 }
 

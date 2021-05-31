@@ -1,6 +1,6 @@
 export class HistoryStack<T> {
-  _index: number;
-  _stack: T[];
+  private _index: number;
+  private _stack: T[];
 
   constructor() {
     this._index = 0;
