@@ -7,7 +7,7 @@ var HistoryStack = /** @class */ (function () {
         this._stack = [];
     }
     HistoryStack.prototype.add = function (history) {
-        this._stack.splice(this._index + 1, this._stack.length - this._index, history);
+        this._stack.splice(this._index + 1, Infinity, history);
         this._index = this._stack.length - 1;
     };
     HistoryStack.prototype.canRedo = function () {
@@ -18,13 +18,13 @@ var HistoryStack = /** @class */ (function () {
     };
     HistoryStack.prototype.redo = function () {
         if (this._index >= this._stack.length) {
-            throw new Error('cannot Redo');
+            throw new Error('cannot redo');
         }
         return this._stack[++this._index];
     };
     HistoryStack.prototype.undo = function () {
         if (this._index < 0) {
-            throw new Error('cannot Undo');
+            throw new Error('cannot undo');
         }
         return this._stack[this._index--];
     };

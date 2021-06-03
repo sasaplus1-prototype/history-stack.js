@@ -8,7 +8,7 @@ export class HistoryStack<T> {
   }
 
   add(history: T) {
-    this._stack.splice(this._index + 1, this._stack.length - this._index, history);
+    this._stack.splice(this._index + 1, Infinity, history);
     this._index = this._stack.length - 1;
   }
 
@@ -22,7 +22,7 @@ export class HistoryStack<T> {
 
   redo() {
     if (this._index >= this._stack.length) {
-      throw new Error('cannot Redo');
+      throw new Error('cannot redo');
     }
 
     return this._stack[++this._index];
@@ -30,7 +30,7 @@ export class HistoryStack<T> {
 
   undo() {
     if (this._index < 0) {
-      throw new Error('cannot Undo');
+      throw new Error('cannot undo');
     }
 
     return this._stack[this._index--];
