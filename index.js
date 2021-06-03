@@ -3,30 +3,30 @@ exports.__esModule = true;
 exports.HistoryStack = void 0;
 var HistoryStack = /** @class */ (function () {
     function HistoryStack() {
-        this._index = 0;
+        this._index = -1;
         this._stack = [];
     }
     HistoryStack.prototype.add = function (history) {
-        this._stack.splice(this._index, this._stack.length - this._index, history);
-        this._index++;
+        this._stack.splice(this._index + 1, this._stack.length - this._index, history);
+        this._index = this._stack.length - 1;
     };
     HistoryStack.prototype.canRedo = function () {
-        return this._index < this._stack.length;
+        return this._index < this._stack.length - 1;
     };
     HistoryStack.prototype.canUndo = function () {
-        return this._index > 0;
+        return this._index >= 0;
     };
     HistoryStack.prototype.redo = function () {
         if (this._index >= this._stack.length) {
             throw new Error('cannot Redo');
         }
-        return this._stack[this._index++];
+        return this._stack[++this._index];
     };
     HistoryStack.prototype.undo = function () {
-        if (this._index <= 0) {
+        if (this._index < 0) {
             throw new Error('cannot Undo');
         }
-        return this._stack[--this._index];
+        return this._stack[this._index--];
     };
     return HistoryStack;
 }());
