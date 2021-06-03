@@ -20,9 +20,9 @@ hs.add('5');
 
 log(hs);
 
-console.log(hs.undo());
-console.log(hs.undo());
-console.log(hs.undo());
+console.log('undo', hs.undo());
+console.log('undo', hs.undo());
+console.log('undo', hs.undo());
 
 log(hs);
 
@@ -30,14 +30,14 @@ hs.add('data');
 
 log(hs);
 
-console.log(hs.undo());
-console.log(hs.undo());
-console.log(hs.undo());
+console.log('undo', hs.undo());
+console.log('undo', hs.undo());
+console.log('undo', hs.undo());
 
 log(hs);
 
-console.log(hs.redo());
-console.log(hs.redo());
-console.log(hs.redo());
+console.log('redo', hs.redo());
+console.log('redo', hs.redo());
+console.log('redo', hs.redo());
 
 log(hs);
